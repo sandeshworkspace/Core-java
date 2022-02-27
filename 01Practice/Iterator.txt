@@ -1,0 +1,44 @@
+
+- Iterator is a Collections framework cursor object. It is available from Java 1.2v
+- It is used for retrieving elements from Collection. 
+
+- Iterator is an iterface.For accessing its methods we need 
+	its implementation class and its object
+- we no need to define implementation class for this interface,	
+	that implementation class is given by SUN(Oracle) as part of 
+	Collection implementation classes as inner classes
+	
+- In order to obtain its implementation class object, 
+	we just need to call one factory method by using 
+	collection object from which we want retrieve elements
+		
+- We have one factory method for obtaining Iterator implementation class object
+- It is declared in COllection interface common to all collections
+	public Iterator<E> iterator()
+
+- Note: In Java5v this method is moved to Iterable<T> interface
+and made this interface as super interface to Collection interface
+for allowing us to use "for each" on collections
+		
+			
+- Code for obtaining Enumeration<E> object
+
+		Vector<String> v = new Vector<>();
+		ArrayList<String> al = new ArrayList<>();
+		HashSet<String> hs = new HashSet<>();
+		
+		Iterator<String> itr1 = v.iterator(); 
+		Iterator<String> itr2 = al.iterator(); 
+		Iterator<String> itr3 = hs.iterator(); 
+			
+- Iterator has three methods for checking and retrieving elements 
+	from underlying collection
+		1) public boolean hasNext()
+		2) public E		  next()	
+		2) public void	  remove()	
+
+Rules on accessing nextElement()
+	- if we invoke next() method either on empty collection or 
+		on empty location, it throws an exception java.util.NoSuchElementException
+		
+		 

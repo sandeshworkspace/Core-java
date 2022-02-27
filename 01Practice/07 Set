@@ -1,0 +1,82 @@
+Working with Set<E>, SortedSet<E>, NavigableSet<E> interfaces 
+==========================================
+Set interface is a sub interface of Collection. It represents
+a group of unique object. It has three implemented classes 
+
+Diagram:
+
+
+
+Set interface  methods
+=================
+Set interface inherits all 20 methods from Collection interface
+plus it must define some more methods based on its 
+functionality "collecting unique objects".
+Actually we no need have any special methods in Set interface
+because its special functionality collecting only unique objects
+can be implemented through add(E) method of 
+Collection interface
+Hence upto Java 8 version we do not have any new methods in 
+Set interface. But in Java 9 version 12 new static factory 
+methods are added in Set interface for creating immutable 
+set type collection object with one line of code.
+They are:
+public static <E> java.util.Set<E> of();
+public static <E> java.util.Set<E> of(E e1);
+public static <E> java.util.Set<E> of(E e1, E e2);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5, E e6);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5, E e6, E e7);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5, E e6, E e7, Ee8);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5, E e6, E e7, Ee8, E e9);
+public static <E> java.util.Set<E> of(E e1, E e2, E e3, E e4, E e5, E e6, E e7, Ee8, E e9, E e10);
+public static <E> java.util.Set<E> of(E... e);
+SortedSet and its methods
+====================
+1) SortedSet is a sub interface of Set
+2) It is used for storing objects in sorting order
+     The sorting order may Ascending order or 
+     may descending order. It is based on the sorting order 
+     supplied by the adding object class through Comparable
+     and Comparator interfaces.
+3) In addition to the methods inheriting from Collection and 
+     Set interfaces, SortedSet interface has its own group of 
+     methods for retrieving objects on sorting order base. 
+4) This interface provides 6 additional methods. They are:
+ public E first();
+ public E last();
+ public SortedSet<E> headSet(E);
+ public SortedSet<E> tailSet(E);
+ public SortedSet<E> subSet(E, E);
+ public Comparator<? super E> comparator();
+ public default Spliterator<E> spliterator();
+ 
+NavigableSet interface and its methods
+=============================
+1. It is is the sub interface of SortedSet
+2. It is given in 1.6 version for adding more navigable methods
+3. It has 12 more methods, the methods are:
+ public E pollFirst(); [returning and removing]
+ public E pollLast(); [returning and removing]
+ public E lower(E e); [returns < e]
+ public E higher(E e); [returns > e]
+ public E floor(E e); [returns <= e]
+ public E ceiling(E e); [returns >= e]
+ public NavigableSet<E> headSet(E toEle, boolean inclusive);
+ public NavigableSet<E> tailSet(E fromEle, boolean inclusive);  
+ public NavigableSet<E> subSet(E startEle, boolean inclusive, 
+    E endEle, boolean inclusive);
+ public Iterator<E> iterator();
+ public Iterator<E> descendingIterator();
+ public NavigableSet<E> descendingSet();
+
+
+We must use 
+- HashSet collection for storing unique 
+ elements without any order.
+- LinkedHashSet for storing unique 
+ elements in insertion order
+- TreeSet for storing unique elements in 
+ sorting order (ASC or DESC)

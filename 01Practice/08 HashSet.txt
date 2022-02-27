@@ -1,0 +1,93 @@
+HashSet<E> points
+===============================================================
+01) The class HashSet is a Set type collection.
+	It is a Collections Framework collection defined 
+	in Java 1.2v as an implementation class of Set interface. 
+
+	If we want store only unique objects without worrying
+	about insertion order, we must choose HashSet collection.
+	
+02) It is not a synchronized collection, because all its methods
+	are not declared as synchronized.
+
+03) It is an unorder collection, because it does not store objects 
+	in insertion order or in sorting order.		
+
+04) The implemented data structure is 
+	"hash table backed by HashMap instance"
+
+05) Its default capacity is 16 & 
+	    incremental capacity is DOUBLE
+	    load factor is 75% (.75)
+	
+06) It allows us to store all 3 types of objects
+	homogeneous, heterogeneous, and
+	only unique objects 
+	
+07) It allows us to store null, and only one.
+	
+08) It does not maintain objects in insertion order, 
+	the default storing order is based on 
+	adding object's hash code. 
+
+09) It allows us to retrieve objects only sequential. 
+	Note: We can not retrieve objects randomly 	
+	from all Set collections, because they do not have index.
+
+10) It internally calls hashCode(), == operator & equals() method 	
+	to be executed from our class in adding, searching and 
+	removing operations.
+
+HashSet class constructors
+=======================================================================
+1) public HashSet()
+2) public HashSet(Collection <? extedends E>)
+3) public HashSet(int initialCapacity)
+4) public HashSet(int initialCapacity, int loadFactor)
+
+
+HashSet class methods
+========================================================================
+We do not have any special methods in this class HashSet
+We must the same methods those are inherited and implementing from 
+Set and Collection interfaces
+
+Program
+======================================================================
+package com.nit.hk.suncollections;
+
+import java.util.HashSet;
+
+public class Test10_HashSet{
+	public static void main(String[] args) {
+		
+		HashSet<Object> hs = new HashSet<>();
+		System.out.println(hs.isEmpty());
+		System.out.println(hs.size());
+		System.out.println(hs);
+		System.out.println();
+		
+		hs.add("a");
+		hs.add("b");
+		hs.add(5);
+		hs.add(6.7);
+		hs.add(true);
+		hs.add(null);
+		hs.add(new A(5, 6));
+		hs.add("a");
+		hs.add(5);
+		hs.add(new A(5, 6));
+		hs.add(new A(7, 8));
+		A a4 = new A(3, 4);
+		hs.add(a4);
+		hs.add(a4);
+		hs.add(null);
+		hs.add(null);
+		
+		System.out.println(hs);
+		System.out.println(hs.size());
+		System.out.println(hs.isEmpty());
+	}
+}
+
+

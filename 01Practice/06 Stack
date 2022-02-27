@@ -1,0 +1,99 @@
+Stack<E> points
+=====================================================================
+public class Stack<E> extends Vector<E> 
+
+1) Stack<E> is a legacy collection. 
+2) It is defined in Java 1.0v. It is sub class of Vector. 	
+3) When we need to store multiple objects 
+	and retrieve them in LIFO order we must choose Stack.
+	
+4) Stack is synchronized collection
+5) Stack is ordered collection. 
+	It maintains Insertion Order with index.
+	 
+6) Stack implemented data structure is stack with growable array.
+7) Stack object default capacity is 10
+   and its default capacityIncremental is double (Or) +1
+
+8) Stack allows us to store all 4 types of elements
+	H, H, U and D
+9) Stack allows us store to null, multiple nulls are allowed
+
+10) Stack maintains elements in Insertion Order
+11) Stack allows to retrieve elements in LIFO order
+	and also random and sequential order
+	
+12) In search and remove operations, it implicitly calls
+	equals() method and it is executed from searching or 
+	removing object class or from its super class Object.
+
+Note: From Java 5v onwards it is not recommended to use Stack
+for maintains elements in LIFO order. Instead of Stack 
+we must use ArrayDeque
+ 
+
+Stack<E> class constructor
+=====================================================================    
+1) public Stack()
+
+
+Stack<E> class methods
+=====================================================================    
+In addition to Vector class method, Stack has provided
+five new methods to treat Vector as stack.
+
+	1) public boolean empty()  	-> is used for finding this stack is empty or not
+	2) public E push(E e)		-> is used for adding object to stack on top
+	3) public E pop()			-> is used for retrieving and removing the top item from stack
+	4) public E peek()			-> is used for only retrieving the top item from the stack 
+	5) public int search(E e)	-> is used for searching the given item in stack 
+									it returns the position of the item from the stack 
+									1 based index
+
+//Program
+=====================================================================
+package com.nit.hk.suncollections;
+
+import java.util.Stack;
+
+public class Test04_Stack{
+	public static void main(String[] args) {
+		Stack<Object> stack = new Stack<>();
+		System.out.println(stack.empty());
+		System.out.println(stack.size());
+		System.out.println();
+		
+		stack.push("a");
+		stack.push("b");
+		stack.push("c");
+		stack.push("d");
+		stack.push("e");
+		
+		System.out.println(stack.empty());
+		System.out.println(stack.size());
+		System.out.println(stack);
+		System.out.println();
+	
+		System.out.println(stack.pop());
+		System.out.println(stack);
+		System.out.println(stack.pop());
+		System.out.println(stack);
+		System.out.println(stack.peek());
+		System.out.println(stack);
+		System.out.println(stack.peek());
+		System.out.println(stack);
+		System.out.println(stack.search("a"));
+		
+		
+		stack.add(5);
+		System.out.println(stack);
+		System.out.println(stack.get(1));
+		System.out.println(stack.remove(2));
+		System.out.println(stack);
+	}
+}
+
+
+
+
+

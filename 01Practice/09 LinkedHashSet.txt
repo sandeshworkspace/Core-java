@@ -1,0 +1,91 @@
+LinkedHashSet<E> points, IQs, Constructors, Methods, Sample program
+====================================================================
+01) The class LinkedHashSet is a Set type collection.
+	It is a Collections Framework collection defined 
+	in Java 1.4v as an sub class of HashSet class. 
+
+	If we want store only unique objects in insertion order, 
+	we must choose LinkedHashSet collection.
+	
+02) It is not a synchronized collection, because all its methods
+	are not declared as synchronized.
+
+03) It is an ordered collection, because it stores objects 
+	in insertion order. 		
+
+04) The implemented data structure is 
+	"hash table + doubly list backed by LinkedHashMap instance"
+
+05) Its default capacity is 16 & 
+	    incremental capacity is DOUBLE
+	    load factor is 75% (.75)
+	
+06) It allows us to store all 3 types of objects
+	homogeneous, heterogeneous, and
+	only unique objects 
+	
+07) It allows us to store null, and only one.
+	
+08) It maintain objects in insertion order, 
+	
+09) It allows us to retrieve objects only sequential. 
+	Note: We can not retrieve objects randomly 	
+	from all Set collections, because they do not have index.
+
+10) It internally calls hashCode(), == operator & equals() method 	
+	to be executed from our class in adding, searching and 
+	removing operations.
+
+LinkedHashSet class constructors
+=======================================================================
+1) public LinkedHashSet()
+2) public LinkedHashSet(Collection <? extedends E>)
+3) public LinkedHashSet(int initialCapacity)
+4) public LinkedHashSet(int initialCapacity, int loadFactor)
+
+
+LinkedHashSet class methods
+========================================================================
+We do not have any special methods in this class HashSet
+We must the same methods those are inherited and implementing from 
+Set and Collection interfaces
+
+Program
+======================================================================
+package com.nit.hk.suncollections;
+
+import java.util.LinkedHashSet;
+
+public class Test11_LinkedHashSet{
+	public static void main(String[] args) {
+		
+		LinkedHashSet<Object> lhs = new LinkedHashSet<>();
+		System.out.println(lhs.isEmpty());
+		System.out.println(lhs.size());
+		System.out.println(lhs);
+		System.out.println();
+		
+		lhs.add("a");
+		lhs.add("b");
+		lhs.add(5);
+		lhs.add(6.7);
+		lhs.add(true);
+		lhs.add(null);
+		lhs.add(new A(5, 6));
+		lhs.add("a");
+		lhs.add(5);
+		lhs.add(new A(5, 6));
+		lhs.add(new A(7, 8));
+		A a4 = new A(3, 4);
+		lhs.add(a4);
+		lhs.add(a4);
+		lhs.add(null);
+		lhs.add(null);
+		
+		System.out.println(lhs);
+		System.out.println(lhs.size());
+		System.out.println(lhs.isEmpty());
+	}
+}
+
+

@@ -1,0 +1,11 @@
+How HashMap can stop duplicates keys?
+Explain HashMap internals?
+=====================================
+1) For stop storing duplicate keys HashMap internally uses
+	1) hashCode()
+	2) == operator and
+	3) equals() methods
+	
+2) 	
+	
+	 

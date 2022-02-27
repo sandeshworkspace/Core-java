@@ -1,0 +1,58 @@
+
+- Enumeration is an legacy interface. It is available from Java 1.0v
+- It is used for retrieving elements and entries from Collection and Map objects.
+
+- For accessing its methods we need to its implementation class and its object
+- we no need to define implementation class for this interface,	
+	that implementation class is given by SUN(Oracle) as part of 
+	Collection and Map implementation classes as inner classes
+	
+- In order to obtain its implementation class object, 
+	we just need to call one factory method by using or by passing 
+	collection object from which we want retrieve elements
+		
+- We have two factory methods for obtaining Enumeration implementation class objects
+	- one for legacy collections
+		public Enumeration<> elements()	- for Vector and Hashtable	
+		public Enumeration<> keys()		- for Hashtable
+	
+	- another for collections framework classes given in Collections class
+		public static Enumeration<E> enumeration(Collection<? extends E> c)
+			
+- Code for obtaining Enumeration<E> object
+
+		Vector<String> v = new Vector<>();
+		Enumeration<String> e1 = v.elements();
+		Enumeration<String> e2 = Collections.enumeration(v);
+		
+		ArrayList<String> al = new ArrayList<>();
+		Enumeration e3 = Collections.enumeration(al);
+			
+		
+- Enumeration has two methods for checking and retrieving elements 
+	from underlying collection
+		1) public boolean hasMoreElements()
+		2) public E		  nextElement()	
+
+- code for calling Enumeration methods
+	
+		Vector<String> v = new Vector<>();
+		v.add("a");
+		v.add("b");
+		v.add("c");
+		
+		Enumeration<E> e = v.elements();
+
+		//System.out.println(e.nextElement());
+		//System.out.println(e.nextElement());
+		//System.out.println(e.nextElement());
+
+		while(e.hasMoreElements()){
+			System.out.println(e.nextElement());
+		}
+
+Rule on accessing nextElement()
+	- if we invoke nextElement() method either on empty collection or 
+		on empty location, it throws an exception java.util.NoSuchElementException
+		
+		 

@@ -1,0 +1,33 @@
+Q) What is a cursor?
+A) It is an object using which we can retrieve objects from a collection
+
+Q) How many cursors Java supports, what are they?
+A) Java supports 4 cursors, they are:
+	1) Enumeration<E>	- available from Java 1.0v 
+	2) Iterator<E>		- available from Java 1.2v
+	3) ListIterator<E>	- available from Java 1.2v
+	4) Spliterator<E>	- available from Java 8v
+	
+	
+Q) What are the total number of different ways we can retrieve elements from a collection?
+A) We have 8 different ways for retrieving elements from Collection and Map
+	1) by using list.get(index), map.get(key), map.keySet(), map.values(), map.entrySet()
+	2) by using Enumeration
+	3) by using Iterator
+	4) by using ListIterator
+	
+	5) by using for each loop
+														
+	6) by using forEach(-) method
+	7) by using Stream API  	
+	8) by using spliterator()	
+	
+Note: 
+	- On List type collection we can apply all above 8 approaches
+	- On Set type collection we can not use get(-), ListIterator
+	- On Map type collection we can only use get(k), keySet(), values(), entrySet 
+		and forEach(-) method
+		
+In order to apply other approaches we must convert Map to collection
+		 	
+	

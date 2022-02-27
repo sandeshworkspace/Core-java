@@ -1,0 +1,65 @@
+Queue<E> interface points
+=======================================================================
+- Queue is a collections framework interface
+- It is given in Java 5v. 
+- Queue is define to perform FIFO order based operations.
+
+- In addition to basic Collection operations, 
+  when we need to perform FIFO order based operations 
+  we must choose Queue based collections
+  
+- Queue interface is defined in java.util package
+- It is sub interface of Collection interface.
+
+- Queue interface has sub interface Deque
+- It is given to support double ended queues
+
+- Java API provides 
+	- one concrete implementation to Queue interface 
+		with the class PriorityQueue<E>
+ 
+ 	- and two concrete implementations to Deque interface
+   		with the classes ArrayDeque<E> and LinkedList<E>
+   
+ - Queue interface hierarchy
+ =======================================================================
+										Iterable<T>	 
+ 							
+ 	   							Collection<E>
+			 	   	
+			 	List<E>			 							Queue<E>
+			 	   				     
+ 	   						   	 			       Deque<E>
+ 	   							    	       
+ 	   						AbstractCollection<E>  
+ 	   							    	       
+ 	   	AbstractList<E>	    	   							AbstractQueue<E>
+ 	   								  
+   		
+   						LinkedList<E>			ArrayDeque<E>      PriorityQueue<E>
+   		
+
+- Queue interface methods
+=======================================================================
+
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		
+   		   
+
+   
+   
